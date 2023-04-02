@@ -14,7 +14,7 @@ ${OBJ}: crypto.h util.h
 senv: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
-debug: senv.c
+debug: ${OBJ}
 	${CC} -o $@ $^ -lcrypto -pg
 	valgrind --tool=memcheck --leak-check=full -s --expensive-definedness-checks=yes --track-origins=yes ./debug
 
