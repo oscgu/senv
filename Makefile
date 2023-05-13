@@ -16,7 +16,7 @@ senv: ${OBJ}
 
 debug: ${OBJ}
 	${CC} -o $@ $^ -lcrypto -pg
-	valgrind --tool=memcheck --leak-check=full -s --expensive-definedness-checks=yes --track-origins=yes ./debug
+	valgrind --tool=memcheck --leak-check=full -s --expensive-definedness-checks=yes --track-origins=yes ./debug migrate test test2 -i test.env
 
 clean:
 	rm -rf *.o

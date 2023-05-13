@@ -23,6 +23,7 @@ sec_pass_prompt()
 
         return plain_pass;
 }
+
 void
 handleErrors(void)
 {
@@ -73,7 +74,7 @@ encrypt_file(const char *file_path, const char *plaintext, int plaintext_len,
 
         printf("cipherlen: %d\n", ciphertext_len);
 
-        FILE *fp = fopen(file_path, "w");
+        FILE *fp = fopen(file_path, "wo");
         if (fp == NULL) {
                 fprintf(stderr, "Error opening file: %s\n", file_path);
                 exit(1);

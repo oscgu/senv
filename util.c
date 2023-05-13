@@ -17,7 +17,7 @@ read_file(const char *file_path, Slice *out)
 {
         FILE *fp = fopen(file_path, "rb");
         if (fp == NULL) {
-                fprintf(stderr, "Error opening file\n");
+                fprintf(stderr, "Error opening file: %s\n", file_path);
                 exit(1);
         }
 
